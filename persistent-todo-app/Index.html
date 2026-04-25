@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f4f6f9;
+    }
+
+    input, select, button {
+      margin: 5px;
+      padding: 8px;
+    }
+
+    #tasks div {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Todo App</h2>
+
+<!-- Add Task -->
+<input id="title" placeholder="Task title" />
+<select id="priority">
+  <option value="LOW">LOW</option>
+  <option value="MEDIUM">MEDIUM</option>
+  <option value="HIGH">HIGH</option>
+</select>
+<input id="dueDate" type="date" />
+<button onclick="addTask()">Add Task</button>
+
+<br><br>
+
+<!-- Search -->
+<input id="search" placeholder="Search..." oninput="renderTasks()" />
+
+<!-- Filters -->
+<select id="filterStatus" onchange="renderTasks()">
+  <option value="">All Status</option>
+  <option value="PENDING">PENDING</option>
+  <option value="IN_PROGRESS">IN_PROGRESS</option>
+  <option value="COMPLETED">COMPLETED</option>
+</select>
+
+<select id="filterPriority" onchange="renderTasks()">
+  <option value="">All Priority</option>
+  <option value="LOW">LOW</option>
+  <option value="MEDIUM">MEDIUM</option>
+  <option value="HIGH">HIGH</option>
+</select>
+
+<!-- Task List -->
+<div id="tasks"></div>
+
+<!-- JS File -->
+<script src="app.js"></script>
+
+</body>
+</html>
+
